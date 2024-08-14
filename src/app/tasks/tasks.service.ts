@@ -12,11 +12,10 @@ export class TasksService {
 
   // hàm tạo task mới
   addNewTask(taskName: string) {
-    // tạo một task mới với id ngẫu nhiên, status mặc định và taskName nhận từ form
+    // tạo một task mới với id ngẫu nhiên, taskName nhận từ form
     const newTask: Task = {
       id: Math.random().toString(),
       taskName: taskName,
-      status: 'OPEN',
     };
 
     // cập nhật danh sách tasks bằng cách thêm task mới vào mảng hiện tại
