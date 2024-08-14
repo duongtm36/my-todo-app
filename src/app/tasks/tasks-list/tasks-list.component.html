@@ -1,0 +1,5 @@
+<ul class="list-group todos mx-auto text-light delete">
+  @for(task of tasks();track task.id) {
+  <app-task-item [task]="task" />
+  }
+</ul>
