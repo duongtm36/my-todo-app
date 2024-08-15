@@ -16,11 +16,6 @@ export class TasksListComponent {
   constructor(private tasksService: TasksService) {}
 
   tasks = computed(() => {
-    switch (this.selectedFilter()) {
-      case 'all':
-        return this.tasksService.getAllTasks();
-      default:
-        return this.tasksService.getAllTasks();
-    }
+    return this.tasksService.getAllTasks();
   });
 }

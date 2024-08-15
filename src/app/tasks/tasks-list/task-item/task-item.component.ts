@@ -1,8 +1,9 @@
 import { Component, input } from '@angular/core';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { TasksService } from '../../tasks.service';
+
 import { Task } from '../../task.model';
+import { TasksService } from '../../tasks.service';
 
 @Component({
   selector: 'app-task-item',
@@ -13,7 +14,12 @@ import { Task } from '../../task.model';
 })
 export class TaskItemComponent {
   faTrash = faTrash;
+  faEdit = faEdit;
   task = input.required<Task>();
 
   constructor(private tasksService: TasksService) {}
+
+  handleDeleteTask(taskId: string) {
+    this.tasksService.deleteTask(taskId);
+  }
 }

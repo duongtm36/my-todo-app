@@ -1,12 +1,14 @@
 <div class="container">
   <header class="text-center text-light my-4">
     <h1 class="mb-4">Todo List</h1>
-    <form class="search">
+    <form class="search" [formGroup]="searchForm">
       <input
         class="form-control m-auto"
         type="text"
         name="search"
+        id="search"
         placeholder="search todos"
+        formControlName="search"
       />
     </form>
   </header>
